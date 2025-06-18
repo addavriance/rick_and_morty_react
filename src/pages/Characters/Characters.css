@@ -1,0 +1,18 @@
+.main-logo svg {
+    filter: drop-shadow(0 0 10px #2bff00);
+    transform: translate(0, 10px);
+    stroke-width: 1.5;
+    stroke: #003e45;
+    fill: none;
+}
+
+@media (max-width: 720px) {
+    .filters__content select {
+        display: none;
+    }
+
+    .filters__button {
+        display: block;
+        align-items: center;
+    }
+}

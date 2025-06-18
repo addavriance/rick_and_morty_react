@@ -1,0 +1,15 @@
+.locations-page .filters__content label,
+.locations-page .filters__content input {
+    max-width: 326px;
+}
+
+@media (max-width: 720px) {
+    .locations-page .filters__content select {
+        display: none;
+    }
+
+    .locations-page .filters__button {
+        display: block;
+        align-items: center;
+    }
+}

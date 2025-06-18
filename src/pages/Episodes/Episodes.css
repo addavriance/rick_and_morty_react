@@ -1,0 +1,4 @@
+.episodes-page .filters__content label,
+.episodes-page .filters__content input {
+    max-width: 500px;
+}
