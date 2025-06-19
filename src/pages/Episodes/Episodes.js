@@ -5,6 +5,8 @@ import EpisodeCard from '../../components/Cards/EpisodeCard';
 import GhostLoader from '../../components/GhostLoader/GhostLoader';
 import './Episodes.css';
 
+import imageLogo from '../../images/rick_and_morty.png'
+
 import {motion} from 'framer-motion';
 
 const Episodes = () => {
@@ -57,7 +59,7 @@ const Episodes = () => {
             <div className="main-logo w-fit mx-auto">
                 <img
                     className="main-logo__icon"
-                    src="%PUBLIC_URL%/rick_and_morty2.png"
+                    src={imageLogo}
                     width="270"
                     alt="Rick and Morty Logo"
                 />

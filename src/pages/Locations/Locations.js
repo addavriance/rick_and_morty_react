@@ -6,6 +6,8 @@ import FilterModal from '../../components/FilterModal/FilterModal';
 import GhostLoader from '../../components/GhostLoader/GhostLoader';
 import './Locations.css';
 
+import imageLogo from '../../images/rick_and_morty.png'
+
 import {motion} from 'framer-motion';
 
 const Locations = () => {
@@ -69,7 +71,7 @@ const Locations = () => {
             <div className="main-logo w-fit mx-auto">
                 <img
                     className="main-logo__icon"
-                    src="%PUBLIC_URL%/rick_and_morty.png"
+                    src={imageLogo}
                     width="326"
                     alt="Rick and Morty Logo"
                 />
