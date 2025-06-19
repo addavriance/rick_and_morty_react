@@ -30,23 +30,23 @@ const EpisodeGhost = () => (
     </div>
 );
 
-const GhostLoader = ({ type, count = 6 }) => {
+const GhostLoader = ({type, count = 6}) => {
     const renderGhost = () => {
         switch (type) {
             case 'character':
-                return <CharacterGhost />;
+                return <CharacterGhost/>;
             case 'location':
-                return <LocationGhost />;
+                return <LocationGhost/>;
             case 'episode':
-                return <EpisodeGhost />;
+                return <EpisodeGhost/>;
             default:
-                return <CharacterGhost />;
+                return <CharacterGhost/>;
         }
     };
 
     return (
         <>
-            {Array.from({ length: count }, (_, index) => (
+            {Array.from({length: count}, (_, index) => (
                 <React.Fragment key={index}>
                     {renderGhost()}
                 </React.Fragment>

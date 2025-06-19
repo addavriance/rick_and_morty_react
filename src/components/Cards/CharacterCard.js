@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import './CharacterCard.css';
 
-const CharacterCard = ({ character, fromPage = 'characters', fromId = null }) => {
+const CharacterCard = ({character, fromPage = 'characters', fromId = null}) => {
     const [imageLoaded, setImageLoaded] = useState(false);
     const [imageError, setImageError] = useState(false);
     const navigate = useNavigate();

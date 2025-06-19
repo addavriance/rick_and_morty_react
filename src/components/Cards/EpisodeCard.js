@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import './EpisodeCard.css';
 
-const EpisodeCard = ({ episode, fromPage = 'episodes', fromId = null }) => {
+const EpisodeCard = ({episode, fromPage = 'episodes', fromId = null}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {

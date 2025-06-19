@@ -6,7 +6,7 @@ import FilterModal from '../../components/FilterModal/FilterModal';
 import GhostLoader from '../../components/GhostLoader/GhostLoader';
 import './Locations.css';
 
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 
 const Locations = () => {
     const {

@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
-import { rickAndMortyAPI } from '../services/api';
+import React, {createContext, useContext, useReducer, useEffect} from 'react';
+import {rickAndMortyAPI} from '../services/api';
 
 // Actions
 const ACTIONS = {
@@ -56,9 +56,9 @@ const initialState = {
 
     // Pagination
     pagination: {
-        characters: { page: 1, hasNextPage: true, totalPages: 0 },
-        locations: { page: 1, hasNextPage: true, totalPages: 0 },
-        episodes: { page: 1, hasNextPage: true, totalPages: 0 }
+        characters: {page: 1, hasNextPage: true, totalPages: 0},
+        locations: {page: 1, hasNextPage: true, totalPages: 0},
+        episodes: {page: 1, hasNextPage: true, totalPages: 0}
     },
 
     // Error handling
@@ -167,19 +167,19 @@ function appReducer(state, action) {
 
 const AppContext = createContext();
 
-export function AppProvider({ children }) {
+export function AppProvider({children}) {
     const [state, dispatch] = useReducer(appReducer, initialState);
 
     const loadCharacters = async (page = 1, append = false) => {
         try {
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'characters', loading: true } });
-            dispatch({ type: ACTIONS.CLEAR_ERROR });
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'characters', loading: true}});
+            dispatch({type: ACTIONS.CLEAR_ERROR});
 
             const data = await rickAndMortyAPI.getCharacters(page, state.characterFilters);
 
             dispatch({
                 type: ACTIONS.SET_CHARACTERS,
-                payload: { data: data.results, append }
+                payload: {data: data.results, append}
             });
 
             dispatch({
@@ -194,8 +194,8 @@ export function AppProvider({ children }) {
                 }
             });
         } catch (error) {
-            dispatch({ type: ACTIONS.SET_ERROR, payload: error.message });
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'characters', loading: false } });
+            dispatch({type: ACTIONS.SET_ERROR, payload: error.message});
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'characters', loading: false}});
 
             dispatch({
                 type: ACTIONS.SET_PAGINATION,
@@ -213,8 +213,8 @@ export function AppProvider({ children }) {
 
     const loadCharacter = async (id) => {
         try {
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'character', loading: true } });
-            dispatch({ type: ACTIONS.CLEAR_ERROR });
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'character', loading: true}});
+            dispatch({type: ACTIONS.CLEAR_ERROR});
 
             const character = await rickAndMortyAPI.getCharacter(id);
 
@@ -235,23 +235,23 @@ export function AppProvider({ children }) {
                 character.episodeDetails = episodes;
             }
 
-            dispatch({ type: ACTIONS.SET_CHARACTER, payload: character });
+            dispatch({type: ACTIONS.SET_CHARACTER, payload: character});
         } catch (error) {
-            dispatch({ type: ACTIONS.SET_ERROR, payload: error.message });
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'character', loading: false } });
+            dispatch({type: ACTIONS.SET_ERROR, payload: error.message});
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'character', loading: false}});
         }
     };
 
     const loadLocations = async (page = 1, append = false) => {
         try {
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'locations', loading: true } });
-            dispatch({ type: ACTIONS.CLEAR_ERROR });
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'locations', loading: true}});
+            dispatch({type: ACTIONS.CLEAR_ERROR});
 
             const data = await rickAndMortyAPI.getLocations(page, state.locationFilters);
 
             dispatch({
                 type: ACTIONS.SET_LOCATIONS,
-                payload: { data: data.results, append }
+                payload: {data: data.results, append}
             });
 
             dispatch({
@@ -266,8 +266,8 @@ export function AppProvider({ children }) {
                 }
             });
         } catch (error) {
-            dispatch({ type: ACTIONS.SET_ERROR, payload: error.message });
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'locations', loading: false } });
+            dispatch({type: ACTIONS.SET_ERROR, payload: error.message});
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'locations', loading: false}});
 
             dispatch({
                 type: ACTIONS.SET_PAGINATION,
@@ -285,8 +285,8 @@ export function AppProvider({ children }) {
 
     const loadLocation = async (id) => {
         try {
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'location', loading: true } });
-            dispatch({ type: ACTIONS.CLEAR_ERROR });
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'location', loading: true}});
+            dispatch({type: ACTIONS.CLEAR_ERROR});
 
             const location = await rickAndMortyAPI.getLocation(id);
 
@@ -306,23 +306,23 @@ export function AppProvider({ children }) {
                 location.residentDetails = residents;
             }
 
-            dispatch({ type: ACTIONS.SET_LOCATION, payload: location });
+            dispatch({type: ACTIONS.SET_LOCATION, payload: location});
         } catch (error) {
-            dispatch({ type: ACTIONS.SET_ERROR, payload: error.message });
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'location', loading: false } });
+            dispatch({type: ACTIONS.SET_ERROR, payload: error.message});
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'location', loading: false}});
         }
     };
 
     const loadEpisodes = async (page = 1, append = false) => {
         try {
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'episodes', loading: true } });
-            dispatch({ type: ACTIONS.CLEAR_ERROR });
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'episodes', loading: true}});
+            dispatch({type: ACTIONS.CLEAR_ERROR});
 
             const data = await rickAndMortyAPI.getEpisodes(page, state.episodeFilters);
 
             dispatch({
                 type: ACTIONS.SET_EPISODES,
-                payload: { data: data.results, append }
+                payload: {data: data.results, append}
             });
 
             dispatch({
@@ -337,8 +337,8 @@ export function AppProvider({ children }) {
                 }
             });
         } catch (error) {
-            dispatch({ type: ACTIONS.SET_ERROR, payload: error.message });
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'episodes', loading: false } });
+            dispatch({type: ACTIONS.SET_ERROR, payload: error.message});
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'episodes', loading: false}});
 
             dispatch({
                 type: ACTIONS.SET_PAGINATION,
@@ -356,8 +356,8 @@ export function AppProvider({ children }) {
 
     const loadEpisode = async (id) => {
         try {
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'episode', loading: true } });
-            dispatch({ type: ACTIONS.CLEAR_ERROR });
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'episode', loading: true}});
+            dispatch({type: ACTIONS.CLEAR_ERROR});
 
             const episode = await rickAndMortyAPI.getEpisode(id);
 
@@ -378,24 +378,24 @@ export function AppProvider({ children }) {
                 episode.castDetails = cast;
             }
 
-            dispatch({ type: ACTIONS.SET_EPISODE, payload: episode });
+            dispatch({type: ACTIONS.SET_EPISODE, payload: episode});
         } catch (error) {
-            dispatch({ type: ACTIONS.SET_ERROR, payload: error.message });
-            dispatch({ type: ACTIONS.SET_LOADING, payload: { type: 'episode', loading: false } });
+            dispatch({type: ACTIONS.SET_ERROR, payload: error.message});
+            dispatch({type: ACTIONS.SET_LOADING, payload: {type: 'episode', loading: false}});
         }
     };
 
     const setFilters = (type, filters) => {
         dispatch({
             type: ACTIONS.SET_FILTERS,
-            payload: { type, filters }
+            payload: {type, filters}
         });
     };
 
     const resetFilters = (type) => {
         dispatch({
             type: ACTIONS.RESET_FILTERS,
-            payload: { type }
+            payload: {type}
         });
     };
 
@@ -414,7 +414,7 @@ export function AppProvider({ children }) {
         resetFilters,
 
         // Helper functions
-        clearError: () => dispatch({ type: ACTIONS.CLEAR_ERROR })
+        clearError: () => dispatch({type: ACTIONS.CLEAR_ERROR})
     };
 
     return (
@@ -432,4 +432,4 @@ export function useApp() {
     return context;
 }
 
-export { ACTIONS };
+export {ACTIONS};

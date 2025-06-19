@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { LogoIcon } from '../Icons';
+import React, {useState} from 'react';
+import {Link, useLocation} from 'react-router-dom';
+import {LogoIcon} from '../Icons';
 import './Header.css';
 
 const Header = () => {
@@ -28,7 +28,7 @@ const Header = () => {
                 <div className="container header__container">
                     <div className="header__content">
                         <Link className="logo" to="/" onClick={closeMobileMenu}>
-                            <LogoIcon className="logo__icon" />
+                            <LogoIcon className="logo__icon"/>
                         </Link>
 
                         <label

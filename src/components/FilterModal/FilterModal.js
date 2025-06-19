@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { CloseIcon } from '../Icons';
+import React, {useState, useEffect} from 'react';
+import {CloseIcon} from '../Icons';
 import './FilterModal.css';
 
 const FilterModal = ({
@@ -71,7 +71,7 @@ const FilterModal = ({
                 <div className="filter-modal__header">
                     <h3 className="filter-modal__title">Filters</h3>
                     <button className="filter-modal__close" onClick={onClose}>
-                        <CloseIcon width={20} height={20} />
+                        <CloseIcon width={20} height={20}/>
                     </button>
                 </div>
 
